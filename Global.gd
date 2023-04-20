@@ -59,10 +59,9 @@ func reset():
 	score = 0
 	for key in combats_completed :
 		combats_completed[key] = false
-	stats = {"max_health":10, 'health':10,
-		"base_defense":20,'defense':20,
-		'base_attack':10, 'attack':10,
-		'max_mana':10, 'mana':10
+	stats = {"max_health":30, 'health':30,
+	"base_defense":20,'defense':20,
+	'base_attack':50, 'attack':50
 	}
 
 func decrease_level():

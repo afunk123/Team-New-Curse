@@ -1,9 +1,9 @@
 extends Sprite
 
-var health = 12
-var max_health = 12
+var health = 15
+var max_health = 15
 var attack = 30
-var defense = 6
+var defense = 8
 
 var number = 0
 var turn = false
