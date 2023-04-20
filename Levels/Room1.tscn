@@ -8,7 +8,6 @@
 [ext_resource path="res://UI/Camera.gd" type="Script" id=6]
 [ext_resource path="res://Combat/Combat.gd" type="Script" id=7]
 [ext_resource path="res://Player/C_Player.gd" type="Script" id=8]
-
 [ext_resource path="res://Enemies/C_Guard.tscn" type="PackedScene" id=9]
 [ext_resource path="res://UI/Pause_Menu.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Assets/Music_Sounds/Untitled_score.mp3" type="AudioStream" id=11]
