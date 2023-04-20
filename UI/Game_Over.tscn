@@ -1,0 +1,170 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://Assets/Fonts/Black Blood.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Assets/Fonts/BLOODSEEKER - DEMO.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://UI/Game_Over.gd" type="Script" id=3]
+
+[sub_resource type="CanvasItemMaterial" id=17]
+light_mode = 2
+
+[sub_resource type="DynamicFont" id=18]
+size = 150
+extra_spacing_char = 4
+font_data = ExtResource( 1 )
+
+[sub_resource type="Gradient" id=16]
+offsets = PoolRealArray( 0.178744, 0.396135, 0.661836, 0.869565, 1 )
+colors = PoolColorArray( 0, 0, 0, 1, 0.261861, 0, 0, 1, 0.4375, 0, 0, 1, 0.78125, 0, 0, 1, 1, 0, 0, 1 )
+
+[sub_resource type="GradientTexture" id=19]
+gradient = SubResource( 16 )
+
+[sub_resource type="DynamicFont" id=20]
+size = 30
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=21]
+size = 28
+extra_spacing_char = 12
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=22]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id=23]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id=24]
+bg_color = Color( 0.603922, 0, 0, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="DynamicFont" id=25]
+size = 28
+extra_spacing_top = 10
+extra_spacing_char = 12
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=26]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id=27]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id=28]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[node name="Game_Over" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="Won" type="Label" parent="."]
+material = SubResource( 17 )
+margin_left = 140.0
+margin_top = 75.0
+margin_right = 884.0
+margin_bottom = 486.0
+custom_fonts/font = SubResource( 18 )
+text = "You Won...
+"
+align = 1
+valign = 1
+
+[node name="Light2D" type="Light2D" parent="Won"]
+position = Vector2( 386.114, 129.225 )
+rotation = -1.5708
+scale = Vector2( 0.104712, 812.535 )
+texture = SubResource( 19 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 362.0
+margin_top = 270.0
+margin_right = 688.0
+margin_bottom = 301.0
+custom_colors/font_color = Color( 0.729412, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 20 )
+text = "But at what costs?"
+align = 1
+valign = 1
+
+[node name="Play" type="Button" parent="."]
+margin_left = 357.0
+margin_top = 340.0
+margin_right = 667.0
+margin_bottom = 400.0
+custom_colors/font_color_hover = Color( 0.603922, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0.603922, 0, 0, 1 )
+custom_fonts/font = SubResource( 21 )
+custom_styles/hover = SubResource( 22 )
+custom_styles/pressed = SubResource( 23 )
+custom_styles/normal = SubResource( 24 )
+text = "Play Again"
+
+[node name="Die" type="Button" parent="."]
+margin_left = 357.0
+margin_top = 440.0
+margin_right = 667.0
+margin_bottom = 500.0
+custom_colors/font_color_hover = Color( 0.603922, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0.603922, 0, 0, 1 )
+custom_fonts/font = SubResource( 25 )
+custom_styles/hover = SubResource( 26 )
+custom_styles/pressed = SubResource( 27 )
+custom_styles/normal = SubResource( 28 )
+text = "Die"
+
+[connection signal="pressed" from="Play" to="." method="_on_Play_pressed"]
+[connection signal="pressed" from="Die" to="." method="_on_Die_pressed"]
