@@ -6,7 +6,6 @@ onready var C_Enemy_Container = get_node('/root/Game/Combat/C_Enemy_Container')
 onready var O_Enemies = get_node('/root/Game/Enemies')
 onready var Confirm = get_node('/root/Game/Combat/ConfirmBlock')
 onready var ActionText = get_node('/root/Game/Combat/ConfirmBlock/ActionText')
-
 var player_old_pos = Vector2.ZERO
 var win = false
 var player_turn = true
@@ -21,6 +20,8 @@ func _ready():
 func _physics_process(_delta):
 	if visible :
 		#fixing the camera
+		if not Global.in_combat :
+			Global.in_combat = true
 		if Player.position != player_old_pos and Player.position != Vector2(64,64):
 			player_old_pos = Player.position
 			Player.position = Vector2(100,100)
@@ -49,6 +50,7 @@ func end_combat():
 	Player.position = player_old_pos
 	Global.stats['defense'] = Global.stats['base_defense']
 	Global.stats['attack'] = Global.stats['base_attack']
+	Global.in_combat = false
 	if win == true :
 		Global.stats['health'] = Global.stats['max_health']
 		Global.combats_completed[Global.room]=true
