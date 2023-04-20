@@ -42,12 +42,13 @@ __meta__ = {
 }
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 212, 546 )
 
 [node name="Enemies" type="Node2D" parent="."]
 script = ExtResource( 5 )
 
 [node name="Door_6_to_5" type="Area2D" parent="."]
-position = Vector2( 322, 511 )
+position = Vector2( 358, 542 )
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="Door_6_to_5"]
@@ -64,7 +65,7 @@ __meta__ = {
 }
 
 [node name="Door_6_to_7" type="Area2D" parent="."]
-position = Vector2( 1431, 241 )
+position = Vector2( 1428, 284 )
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="Door_6_to_7"]

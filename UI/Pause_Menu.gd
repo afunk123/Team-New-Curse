@@ -1,6 +1,5 @@
 extends Control
 
-
 func _on_Contiue_pressed():
 	self.hide()
 

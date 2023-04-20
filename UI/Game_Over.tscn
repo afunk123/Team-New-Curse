@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Assets/Fonts/Black Blood.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Assets/Fonts/BLOODSEEKER - DEMO.ttf" type="DynamicFontData" id=2]
@@ -22,44 +22,6 @@ gradient = SubResource( 16 )
 [sub_resource type="DynamicFont" id=20]
 size = 30
 font_data = ExtResource( 2 )
-
-[sub_resource type="DynamicFont" id=21]
-size = 28
-extra_spacing_char = 12
-font_data = ExtResource( 2 )
-
-[sub_resource type="StyleBoxFlat" id=22]
-bg_color = Color( 0, 0, 0, 1 )
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-corner_radius_top_left = 30
-corner_radius_top_right = 30
-corner_radius_bottom_right = 30
-corner_radius_bottom_left = 30
-
-[sub_resource type="StyleBoxFlat" id=23]
-bg_color = Color( 0, 0, 0, 1 )
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-corner_radius_top_left = 30
-corner_radius_top_right = 30
-corner_radius_bottom_right = 30
-corner_radius_bottom_left = 30
-
-[sub_resource type="StyleBoxFlat" id=24]
-bg_color = Color( 0.603922, 0, 0, 1 )
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-corner_radius_top_left = 30
-corner_radius_top_right = 30
-corner_radius_bottom_right = 30
-corner_radius_bottom_left = 30
 
 [sub_resource type="DynamicFont" id=25]
 size = 28
@@ -140,19 +102,6 @@ text = "But at what costs?"
 align = 1
 valign = 1
 
-[node name="Play" type="Button" parent="."]
-margin_left = 357.0
-margin_top = 340.0
-margin_right = 667.0
-margin_bottom = 400.0
-custom_colors/font_color_hover = Color( 0.603922, 0, 0, 1 )
-custom_colors/font_color_pressed = Color( 0.603922, 0, 0, 1 )
-custom_fonts/font = SubResource( 21 )
-custom_styles/hover = SubResource( 22 )
-custom_styles/pressed = SubResource( 23 )
-custom_styles/normal = SubResource( 24 )
-text = "Play Again"
-
 [node name="Die" type="Button" parent="."]
 margin_left = 357.0
 margin_top = 440.0
@@ -164,7 +113,6 @@ custom_fonts/font = SubResource( 25 )
 custom_styles/hover = SubResource( 26 )
 custom_styles/pressed = SubResource( 27 )
 custom_styles/normal = SubResource( 28 )
-text = "Die"
+text = "Quit"
 
-[connection signal="pressed" from="Play" to="." method="_on_Play_pressed"]
 [connection signal="pressed" from="Die" to="." method="_on_Die_pressed"]
