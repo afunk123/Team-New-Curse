@@ -1,9 +1,9 @@
 extends Sprite
 
-var health = 14
-var max_health = 14
-var attack = 45
-var defense = 6
+var health = 20
+var max_health = 20
+var attack = 100
+var defense = 12
 var skip = false
 
 var number = 0
@@ -28,8 +28,7 @@ func take_action():
 		Global.stats['health'] -= attack/Global.stats['defense']
 	elif action == 'defend':
 		if defense < Global.stats['attack'] :
-			defense *= 1.4
-			defense = int(defense)
+			defense += 2
 		else:
 			Global.stats['health'] -= attack/Global.stats['defense']
 			action = 'attack'
