@@ -20,4 +20,4 @@ The player sprite was made by m-acrophage. (https://m-acrophage.itch.io/side-scr
 Hahaha
 
 # Created by: Group Name
-Alexander Trippel (Main programmer), Aaron Funkhouser (Composer, UI Designer, Tileset editor) Ronen Fisher (Main artist, created all enemy sprites), Keller McKean (Level & game designer)
+Alexander Trippel (Main programmer, created Tilemap), Aaron Funkhouser (Composer, UI Designer, Tilemap editor) Ronen Fisher (Main artist, created all enemy sprites), Keller McKean (Level & game designer)
