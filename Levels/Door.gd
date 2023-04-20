@@ -13,7 +13,7 @@ func _on_Door_body_entered(body):
 			Global.spawn_position = Vector2(200,400)
 		if name == "Door_3_to_2":
 			Global.room = 2
-			Global.spawn_position = Vector2(700,150)
+			Global.spawn_position = Vector2(100,150)
 		if name == "Door_3_to_4":
 			Global.room = 4
 			Global.spawn_position = Vector2(100,150)
