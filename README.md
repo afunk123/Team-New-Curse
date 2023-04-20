@@ -9,12 +9,12 @@ The theme for the Game Jam was "Reverse" and we exemplified that by turning many
 - - Music will reverse itself if allowed to play long enough
 
 ## Impediments
-Our group had a hard time with pushing and pulling things to GitHub.
-Somethimes things would just be lost in translation or accidentatlly be overwritten.
-Ronen also got very sick during development.
+- Our group had a hard time with pushing and pulling things to GitHub.
+- Somethimes things would just be lost in translation or accidentatlly be overwritten.
+- Ronen also got very sick during development.
 
 ## Game Play
-Defeat the Vampire Lord who placed this curse upon you while avoiding enemies!
+- Defeat the Vampire Lord who placed this curse upon you while avoiding enemies!
 
 ## Implementation
 Levels
@@ -62,13 +62,13 @@ Music
 - Score composed in MusceScore 4
 
 ## References
-The player sprite was made by m-acrophage. (https://m-acrophage.itch.io/side-scrolling-hack-n-slash-character)
+- The player sprite was made by m-acrophage. (https://m-acrophage.itch.io/side-scrolling-hack-n-slash-character)
 
 ## Future Development
 None
 
 # Created by: Team Curse
-Alexander Trippel (Main programmer, created Tilemap)
-Aaron Funkhouser (Composer, UI Designer, Tilemap editor)
-Ronen Fisher (Main artist, created all enemy sprites) 
-Keller McKean (Level & game designer)
+- Alexander Trippel (Main programmer, created Tilemap)
+- Aaron Funkhouser (Composer, UI Designer, Tilemap editor)
+- Ronen Fisher (Main artist, created all enemy sprites) 
+- Keller McKean (Level & game designer)
