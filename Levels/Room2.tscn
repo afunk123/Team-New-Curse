@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Levels/Door.gd" type="Script" id=2]
@@ -8,11 +8,10 @@
 [ext_resource path="res://UI/Camera.gd" type="Script" id=6]
 [ext_resource path="res://Combat/Combat.gd" type="Script" id=7]
 [ext_resource path="res://Player/C_Player.gd" type="Script" id=8]
-[ext_resource path="res://Enemies/C_Guard.gd" type="Script" id=9]
-[ext_resource path="res://Assets/Guard.jpg" type="Texture" id=10]
-[ext_resource path="res://UI/Pause_Menu.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Assets/Music_Sounds/Untitled_score.mp3" type="AudioStream" id=12]
-[ext_resource path="res://UI/UI.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Enemies/C_Guard.tscn" type="PackedScene" id=9]
+[ext_resource path="res://UI/Pause_Menu.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Assets/Music_Sounds/Untitled_score.mp3" type="AudioStream" id=11]
+[ext_resource path="res://UI/UI.tscn" type="PackedScene" id=12]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
@@ -48,10 +47,8 @@ extents = Vector2( 17.5, 30.5 )
 [node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -28.0
-margin_top = -22.0
-margin_right = 1972.0
-margin_bottom = 978.0
+margin_right = 2000.0
+margin_bottom = 1000.0
 color = Color( 0.0235294, 0.0196078, 0.117647, 1 )
 
 [node name="Background" type="TileMap" parent="."]
@@ -70,7 +67,7 @@ tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 
 script = ExtResource( 5 )
 
 [node name="Door_2_to_1" type="Area2D" parent="."]
-position = Vector2( 94, 312 )
+position = Vector2( 105, 521 )
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="Door_2_to_1"]
@@ -87,7 +84,7 @@ __meta__ = {
 }
 
 [node name="Door_2_to_3" type="Area2D" parent="."]
-position = Vector2( 931, 540 )
+position = Vector2( 924, 162 )
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="Door_2_to_3"]
@@ -233,7 +230,6 @@ margin_bottom = 50.0
 text = "Back"
 
 [node name="C_Player_Container" type="Node2D" parent="Combat"]
-visible = false
 
 [node name="C_Player" type="Sprite" parent="Combat/C_Player_Container"]
 script = ExtResource( 8 )
@@ -270,7 +266,12 @@ margin_right = 60.0
 margin_bottom = -20.0
 text = "Continue"
 
-[node name="Blocker" parent="Combat/ConfirmBlock" instance=ExtResource( 10 )]
+[node name="Blocker" type="ColorRect" parent="Combat/ConfirmBlock"]
+margin_left = -337.0
+margin_top = -164.0
+margin_right = -133.0
+margin_bottom = 149.0
+color = Color( 0.392157, 0.392157, 0.392157, 1 )
 
 [node name="Camera" type="Camera2D" parent="."]
 current = true
@@ -278,17 +279,15 @@ limit_left = 0
 limit_top = 0
 script = ExtResource( 6 )
 
-
-[node name="Pause_Menu" parent="." instance=ExtResource( 11 )]
+[node name="Pause_Menu" parent="." instance=ExtResource( 10 )]
 pause_mode = 2
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 12 )
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
 autoplay = true
 
-[node name="UI" parent="." instance=ExtResource( 13 )]
+[node name="UI" parent="." instance=ExtResource( 12 )]
 
-[connection signal="body_entered" from="Door_2_to_3" to="Door_2_to_3" method="_on_Door_body_entered"]
 [connection signal="body_entered" from="Door_2_to_1" to="Door_2_to_1" method="_on_Door_body_entered"]
 [connection signal="body_entered" from="Door_2_to_3" to="Door_2_to_3" method="_on_Door_body_entered"]
 [connection signal="pressed" from="Combat/Player_Action_Area/Fight1" to="Combat" method="_on_Fight1_pressed"]
