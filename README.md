@@ -69,6 +69,6 @@ None
 
 # Created by: Team Curse
 - Alexander Trippel (Main programmer, created Tilemap, Combat System Developer, Overworld Physics)
-- Aaron Funkhouser (Composer, UI Designer, Tilemap editor)
+- Aaron Funkhouser (Composer, UI Designer, Tilemap editor, Aesthetic Creator)
 - Ronen Fisher (Main artist, created all enemy sprites) 
 - Keller McKean (Level & game designer)
