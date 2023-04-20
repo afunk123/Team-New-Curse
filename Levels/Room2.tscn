@@ -249,20 +249,20 @@ margin_right = -133.0
 margin_bottom = 149.0
 color = Color( 0.392157, 0.392157, 0.392157, 1 )
 
+[node name="UI" parent="." instance=ExtResource( 12 )]
+
+[node name="Pause_Menu" parent="." instance=ExtResource( 10 )]
+pause_mode = 2
+
 [node name="Camera" type="Camera2D" parent="."]
 current = true
 limit_left = 0
 limit_top = 0
 script = ExtResource( 6 )
 
-[node name="Pause_Menu" parent="." instance=ExtResource( 10 )]
-pause_mode = 2
-
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 11 )
 autoplay = true
-
-[node name="UI" parent="." instance=ExtResource( 12 )]
 
 [connection signal="body_entered" from="Door_2_to_1" to="Door_2_to_1" method="_on_Door_body_entered"]
 [connection signal="body_entered" from="Door_2_to_3" to="Door_2_to_3" method="_on_Door_body_entered"]

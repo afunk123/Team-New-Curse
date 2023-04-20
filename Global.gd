@@ -2,7 +2,7 @@ extends Node
 
 var spawn_position = Vector2(100,100)
 var init_spawn_pos = Vector2(100,100)
-
+var in_combat = false
 var score = 0
 var level = 20
 var room = 1
@@ -37,7 +37,7 @@ var stats = {"max_health":20, 'health':20,
 }
 
 func _unhandled_input(event):
-	if event.is_action_pressed("menu"):
+	if event.is_action_pressed("menu") and not in_combat:
 		get_node("/root/Game/Pause_Menu").show()
 
 func stat_raise(target, stat, amount):
