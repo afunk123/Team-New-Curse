@@ -48,8 +48,10 @@ extents = Vector2( 17.5, 30.5 )
 [node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 2000.0
-margin_bottom = 1000.0
+margin_left = -28.0
+margin_top = -22.0
+margin_right = 1972.0
+margin_bottom = 978.0
 color = Color( 0.0235294, 0.0196078, 0.117647, 1 )
 
 [node name="Background" type="TileMap" parent="."]
@@ -67,25 +69,8 @@ tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 
 [node name="Enemies" type="Node2D" parent="."]
 script = ExtResource( 5 )
 
-[node name="Door_2_to_3" type="Area2D" parent="."]
-position = Vector2( 913, 145 )
-script = ExtResource( 2 )
-
-[node name="Sprite" type="Sprite" parent="Door_2_to_3"]
-texture = ExtResource( 3 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Door_2_to_3"]
-position = Vector2( 0.5, 0.5 )
-shape = SubResource( 3 )
-__meta__ = {
-"_edit_lock_": true
-}
-
 [node name="Door_2_to_1" type="Area2D" parent="."]
-position = Vector2( 100, 300 )
+position = Vector2( 94, 312 )
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="Door_2_to_1"]
@@ -95,6 +80,23 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door_2_to_1"]
+position = Vector2( 0.5, 0.5 )
+shape = SubResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Door_2_to_3" type="Area2D" parent="."]
+position = Vector2( 931, 540 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="Door_2_to_3"]
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door_2_to_3"]
 position = Vector2( 0.5, 0.5 )
 shape = SubResource( 3 )
 __meta__ = {
@@ -173,10 +175,9 @@ margin_bottom = 290.0
 color = Color( 0.196078, 0.196078, 0.196078, 1 )
 
 [node name="Information" type="Label" parent="Combat/Player_Action_Area/Info_Wall"]
-margin_left = 18.0
-margin_top = 50.0
-margin_right = 178.0
-margin_bottom = 150.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -164.0
 align = 1
 valign = 1
 
@@ -232,23 +233,51 @@ margin_bottom = 50.0
 text = "Back"
 
 [node name="C_Player_Container" type="Node2D" parent="Combat"]
+visible = false
 
 [node name="C_Player" type="Sprite" parent="Combat/C_Player_Container"]
-texture = ExtResource( 4 )
 script = ExtResource( 8 )
 
 [node name="C_Enemy_Container" type="Node2D" parent="Combat"]
 
-[node name="C_Guard" type="Sprite" parent="Combat/C_Enemy_Container"]
-scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 10 )
-script = ExtResource( 9 )
+[node name="C_Guard" parent="Combat/C_Enemy_Container" instance=ExtResource( 9 )]
+
+[node name="ConfirmBlock" type="ColorRect" parent="Combat"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -150.0
+margin_top = -60.0
+margin_right = 150.0
+margin_bottom = 60.0
+color = Color( 0.392157, 0.392157, 0.392157, 1 )
+
+[node name="ActionText" type="Label" parent="Combat/ConfirmBlock"]
+anchor_right = 1.0
+margin_bottom = 60.0
+align = 1
+valign = 1
+
+[node name="Continue" type="Button" parent="Combat/ConfirmBlock"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -60.0
+margin_top = -40.0
+margin_right = 60.0
+margin_bottom = -20.0
+text = "Continue"
+
+[node name="Blocker" parent="Combat/ConfirmBlock" instance=ExtResource( 10 )]
 
 [node name="Camera" type="Camera2D" parent="."]
 current = true
 limit_left = 0
 limit_top = 0
 script = ExtResource( 6 )
+
 
 [node name="Pause_Menu" parent="." instance=ExtResource( 11 )]
 pause_mode = 2
@@ -261,6 +290,7 @@ autoplay = true
 
 [connection signal="body_entered" from="Door_2_to_3" to="Door_2_to_3" method="_on_Door_body_entered"]
 [connection signal="body_entered" from="Door_2_to_1" to="Door_2_to_1" method="_on_Door_body_entered"]
+[connection signal="body_entered" from="Door_2_to_3" to="Door_2_to_3" method="_on_Door_body_entered"]
 [connection signal="pressed" from="Combat/Player_Action_Area/Fight1" to="Combat" method="_on_Fight1_pressed"]
 [connection signal="pressed" from="Combat/Player_Action_Area/Defend1" to="Combat" method="_on_Defend1_pressed"]
 [connection signal="pressed" from="Combat/Player_Action_Area/Item1" to="Combat" method="_on_Item1_pressed"]
@@ -269,3 +299,4 @@ autoplay = true
 [connection signal="pressed" from="Combat/Player_Fight_Area/Attack_B" to="Combat" method="_on_Attack_B_pressed"]
 [connection signal="pressed" from="Combat/Player_Fight_Area/Attack_C" to="Combat" method="_on_Attack_C_pressed"]
 [connection signal="pressed" from="Combat/Player_Fight_Area/Back" to="Combat" method="_on_Back_pressed"]
+[connection signal="pressed" from="Combat/ConfirmBlock/Continue" to="Combat" method="_on_Continue_pressed"]
