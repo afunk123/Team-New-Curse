@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Levels/Door.gd" type="Script" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Player/C_Player.gd" type="Script" id=8]
 [ext_resource path="res://Enemies/C_Vamp.tscn" type="PackedScene" id=9]
 [ext_resource path="res://UI/Pause_Menu.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Assets/Music_Sounds/Untitled_score.mp3" type="AudioStream" id=11]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
@@ -234,6 +235,10 @@ script = ExtResource( 6 )
 
 [node name="Pause_Menu" parent="." instance=ExtResource( 10 )]
 pause_mode = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+autoplay = true
 
 [connection signal="body_entered" from="Door_4_to_5" to="Door_4_to_5" method="_on_Door_body_entered"]
 [connection signal="pressed" from="Combat/Player_Action_Area/Fight1" to="Combat" method="_on_Fight1_pressed"]
