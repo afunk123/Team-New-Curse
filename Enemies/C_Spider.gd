@@ -1,7 +1,7 @@
 extends Sprite
 
-var health = 10
-var max_health = 10
+var health = 12
+var max_health = 12
 var attack = 30
 var defense = 6
 

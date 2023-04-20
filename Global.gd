@@ -31,9 +31,9 @@ var room_enemy_pos = {0:Vector2.ZERO,
 var spawned = false
 var enemy_combat_pos = [Vector2(600,150)]
 
-var stats = {"max_health":20, 'health':20,
-	"base_defense":12,'defense':12,
-	'base_attack':20, 'attack':20,
+var stats = {"max_health":30, 'health':30,
+	"base_defense":20,'defense':20,
+	'base_attack':50, 'attack':50,
 }
 
 func _unhandled_input(event):
@@ -54,16 +54,16 @@ func reset():
 	for key in combats_completed :
 		combats_completed[key] = false
 	stats = {"max_health":10, 'health':10,
-		"base_defense":10,'defense':10,
+		"base_defense":20,'defense':20,
 		'base_attack':10, 'attack':10,
 		'max_mana':10, 'mana':10
 	}
 
 func decrease_level():
 	level -= 1
-	stats['health'] -= 1
-	stats['max_health'] -= 1
-	stats['attack'] -= 1
-	stats['base_attack'] -= 1
-	stats['defense'] -= 1
-	stats['base_defense'] -= 1
+	stats['health'] -= 3
+	stats['max_health'] -= 3
+	stats['attack'] -= 5
+	stats['base_attack'] -= 5
+	stats['defense'] -= 2
+	stats['base_defense'] -= 2
