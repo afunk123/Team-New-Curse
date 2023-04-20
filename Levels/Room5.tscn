@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Enemies/Enemies.gd" type="Script" id=1]
 [ext_resource path="res://UI/Camera.gd" type="Script" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Assets/Door.png" type="Texture" id=8]
 [ext_resource path="res://Player/C_Player.gd" type="Script" id=9]
 [ext_resource path="res://UI/Blocker.tscn" type="PackedScene" id=10]
+
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
@@ -278,6 +279,7 @@ script = ExtResource( 2 )
 
 [connection signal="body_entered" from="Door_5_to_4" to="Door_5_to_4" method="_on_Door_body_entered"]
 [connection signal="body_entered" from="Door_5_to_6" to="Door_5_to_6" method="_on_Door_body_entered"]
+
 
 [connection signal="pressed" from="Combat/Player_Action_Area/Fight1" to="Combat" method="_on_Fight1_pressed"]
 [connection signal="pressed" from="Combat/Player_Action_Area/Defend1" to="Combat" method="_on_Defend1_pressed"]

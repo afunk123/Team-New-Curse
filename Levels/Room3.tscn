@@ -1,4 +1,5 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
+
 
 [ext_resource path="res://Enemies/Enemies.gd" type="Script" id=1]
 [ext_resource path="res://UI/Camera.gd" type="Script" id=2]
@@ -277,6 +278,10 @@ script = ExtResource( 2 )
 
 [node name="Pause_Menu" parent="." instance=ExtResource( 11 )]
 pause_mode = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
+autoplay = true
 
 [connection signal="body_entered" from="Door_3_to_2" to="Door_3_to_2" method="_on_Door_body_entered"]
 [connection signal="body_entered" from="Door_3_to_4" to="Door_3_to_4" method="_on_Door_body_entered"]
