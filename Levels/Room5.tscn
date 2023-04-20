@@ -47,7 +47,7 @@ position = Vector2( 523, 165 )
 script = ExtResource( 5 )
 
 [node name="Door_5_to_4" type="Area2D" parent="."]
-position = Vector2( 585, 150 )
+position = Vector2( 588, 160 )
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="Door_5_to_4"]
