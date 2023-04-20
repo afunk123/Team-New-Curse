@@ -10,7 +10,6 @@ var player_old_pos = Vector2.ZERO
 var win = false
 var player_turn = true
 var defensebuff = 4 #how much player defense raises by per use of defend
-var player_confirmed = false
 func _ready():
 	Confirm.hide()
 	randomize()
@@ -20,7 +19,6 @@ func _ready():
 func _physics_process(_delta):
 	if visible :
 		#fixing the camera
-		player_confirmed = false
 		if not Global.in_combat :
 			Global.in_combat = true
 		if Player.position != player_old_pos and Player.position != Vector2(64,64):
@@ -30,8 +28,7 @@ func _physics_process(_delta):
 		if player_turn:
 			$Player_Action_Area.show()
 			#player turn events
-		elif not player_turn and player_confirmed:
-			player_confirmed = false
+		else:
 			var enemies = C_Enemy_Container.get_children()
 			for child in enemies :
 				child.take_action()
@@ -40,8 +37,6 @@ func _physics_process(_delta):
 				else :
 					player_turn = true
 					child.skip = false
-					Confirm.show()
-					ActionText.text = Global.enemy_text
 			#enemy turn events
 		#ending the combat when either side dies
 		if win == true or Global.stats['health'] <= 0 :
@@ -177,4 +172,3 @@ func _on_Back_pressed():
 
 func _on_Continue_pressed():
 	Confirm.hide()
-	player_confirmed = true
