@@ -39,7 +39,7 @@ Combat System
 - Enemies
 - - All have unique attacks that deal diffeent amouts of damage
 
-Movement 
+Movement
 - Player 
 - - can move in all directions with WASD
 - Enemies 
@@ -68,7 +68,7 @@ Music
 None
 
 # Created by: Team Curse
-- Alexander Trippel (Main programmer, created Tilemap)
+- Alexander Trippel (Main programmer, created Tilemap, Combat System Developer, Overworld Physics)
 - Aaron Funkhouser (Composer, UI Designer, Tilemap editor)
 - Ronen Fisher (Main artist, created all enemy sprites) 
 - Keller McKean (Level & game designer)

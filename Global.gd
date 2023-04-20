@@ -11,7 +11,7 @@ var rooms = [0,'res://Levels/Room1.tscn',
 'res://Levels/Room2.tscn','res://Levels/Room3.tscn','res://Levels/Room4.tscn','res://Levels/Room5.tscn'
 ,'res://Levels/Room6.tscn','res://Levels/Room7.tscn','res://UI/Game_Over.tscn']
 var potions = ['potion','potion','potion','potion','potion']
-
+var enemy_text = ''
 var combats_completed = {0:false,1:false,2:false,3:false,4:false,5:false,6:false,7:false,8:false}
 
 var room_enemy_type = {0:'',
