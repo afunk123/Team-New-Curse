@@ -2,8 +2,8 @@ extends Control
 
 
 func _physics_process(_delta):
-	$Health.text = "Health: 20 / " + str(Global.stats["health"])
+	$Health.text = 'Health: ' + str(Global.stats["health"]) +' / '+  str(Global.stats["max_health"])
 	$Room.text = "Room: " + str(Global.room)
-	$Attack.text = "Attack: 20 / " + str(Global.stats["attack"])
-	$Defense.text = "Defense: 12 / " + str(Global.stats["defense"])
+	$Attack.text = 'Attack: ' + str(Global.stats["attack"]) +' / '+  str(Global.stats["base_attack"])
+	$Defense.text = 'Defense: ' + str(Global.stats["defense"]) + ' / '+ str(Global.stats["base_defense"])
 	$Level.text = "Level: " + str(Global.level)
