@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Enemies/C_Guard.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Guard.jpg" type="Texture" id=2]
+[ext_resource path="res://Assets/Guard.png" type="Texture" id=2]
 
 [node name="C_Guard" type="Sprite"]
 scale = Vector2( 0.15, 0.15 )
