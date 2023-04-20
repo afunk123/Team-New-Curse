@@ -3,9 +3,8 @@
 [ext_resource path="res://Enemies/Guard.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Guard.png" type="Texture" id=2]
 
-[sub_resource type="CapsuleShape2D" id=1]
-radius = 45.0
-height = 120.0
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 39, 24 )
 
 [node name="Guard" type="KinematicBody2D"]
 collision_layer = 2
@@ -21,13 +20,12 @@ scale = Vector2( 0.075, 0.075 )
 polygon = PoolVector2Array( 320.5, 512, -320.5, 512, -320.5, -512, 320.5, -512 )
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 2.5
+wait_time = 2.0
 autostart = true
 
 [node name="Combat Start" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Combat Start"]
-position = Vector2( -50, 0 )
 rotation = 1.5708
 shape = SubResource( 1 )
 

@@ -23,8 +23,8 @@ var room_enemy_type = {0:'',
 }
 var room_enemy_pos = {0:Vector2.ZERO,
 	1:Vector2.ZERO,
-	2:Vector2(550,450),
-	3:Vector2(600, 200),
+	2:Vector2(520,450),
+	3:Vector2(200, 200),
 	4:Vector2(800, 300),
 	5:Vector2(800,300)
 }
