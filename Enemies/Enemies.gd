@@ -2,6 +2,7 @@ extends Node2D
 
 onready var Guard = load('res://Enemies/Guard.tscn')
 onready var Guard2 = load('res://Enemies/Guard2.tscn')
+onready var Spider2 = load('res://Enemies/Spider2.tscn')
 onready var Spider = load('res://Enemies/Spider.tscn')
 onready var DM = load('res://Enemies/DM.tscn')
 onready var Vamp = load('res://Enemies/Vamp.tscn')
@@ -27,6 +28,8 @@ func spawn(e_type, p):
 		enemy = Spider.instance()
 	if e_type == "Guard2":
 		enemy = Guard2.instance()
+	if e_type == "Spider2":
+		enemy = Spider2.instance()
 	if e_type == "DM":
 		enemy = DM.instance()
 	if e_type == "Vamp":
