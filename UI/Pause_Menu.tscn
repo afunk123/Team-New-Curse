@@ -90,6 +90,7 @@ corner_radius_bottom_right = 30
 corner_radius_bottom_left = 30
 
 [node name="Pause_Menu" type="Control"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 3 )
@@ -112,6 +113,7 @@ align = 1
 valign = 1
 
 [node name="Contiue" type="Button" parent="."]
+pause_mode = 2
 margin_left = 392.0
 margin_top = 300.0
 margin_right = 632.0

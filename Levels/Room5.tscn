@@ -275,8 +275,10 @@ limit_left = 0
 limit_top = 0
 script = ExtResource( 2 )
 
+
 [connection signal="body_entered" from="Door_5_to_4" to="Door_5_to_4" method="_on_Door_body_entered"]
 [connection signal="body_entered" from="Door_5_to_6" to="Door_5_to_6" method="_on_Door_body_entered"]
+
 [connection signal="pressed" from="Combat/Player_Action_Area/Fight1" to="Combat" method="_on_Fight1_pressed"]
 [connection signal="pressed" from="Combat/Player_Action_Area/Defend1" to="Combat" method="_on_Defend1_pressed"]
 [connection signal="pressed" from="Combat/Player_Action_Area/Item1" to="Combat" method="_on_Item1_pressed"]
