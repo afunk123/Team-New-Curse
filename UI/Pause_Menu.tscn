@@ -1,0 +1,141 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Assets/Fonts/Black Blood.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Assets/Fonts/BLOODSEEKER - DEMO.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://UI/Pause_Menu.gd" type="Script" id=3]
+
+[sub_resource type="CanvasItemMaterial" id=1]
+
+[sub_resource type="DynamicFont" id=2]
+size = 120
+extra_spacing_char = 4
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 28
+extra_spacing_top = 10
+extra_spacing_char = 12
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.25098, 0.219608, 0.458824, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="DynamicFont" id=7]
+size = 28
+extra_spacing_top = 10
+extra_spacing_char = 12
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0.603922, 0, 0, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[node name="Pause_Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+
+[node name="Background" type="ColorRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+color = Color( 0, 0, 0, 0.784314 )
+
+[node name="Paused" type="Label" parent="."]
+material = SubResource( 1 )
+margin_left = 176.0
+margin_top = 100.0
+margin_right = 848.0
+margin_bottom = 431.0
+custom_fonts/font = SubResource( 2 )
+text = "PAUSED
+"
+align = 1
+valign = 1
+
+[node name="Contiue" type="Button" parent="."]
+margin_left = 392.0
+margin_top = 300.0
+margin_right = 632.0
+margin_bottom = 360.0
+custom_colors/font_color_hover = Color( 0.25098, 0.219608, 0.458824, 1 )
+custom_colors/font_color_pressed = Color( 0.25098, 0.219608, 0.458824, 1 )
+custom_fonts/font = SubResource( 3 )
+custom_styles/hover = SubResource( 4 )
+custom_styles/pressed = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
+text = "Continue"
+
+[node name="Quit" type="Button" parent="."]
+margin_left = 392.0
+margin_top = 420.0
+margin_right = 632.0
+margin_bottom = 480.0
+custom_colors/font_color_hover = Color( 0.603922, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0.603922, 0, 0, 1 )
+custom_fonts/font = SubResource( 7 )
+custom_styles/hover = SubResource( 8 )
+custom_styles/pressed = SubResource( 9 )
+custom_styles/normal = SubResource( 10 )
+text = "Quit"
+
+[connection signal="pressed" from="Contiue" to="." method="_on_Contiue_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_Quit_pressed"]

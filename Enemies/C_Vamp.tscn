@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Enemies/C_Vamp.gd" type="Script" id=1]
+[ext_resource path="res://Assets/B314E80F-D97E-46C6-8D7D-458D1D4E0BDD.jpeg" type="Texture" id=2]
+
+[node name="C_Vamp" type="Sprite"]
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 2 )
+script = ExtResource( 1 )

@@ -1,0 +1,152 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://Assets/Fonts/Black Blood.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://UI/Start_Menu.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Fonts/BLOODSEEKER - DEMO.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="CanvasItemMaterial" id=1]
+light_mode = 2
+
+[sub_resource type="DynamicFont" id=2]
+size = 120
+extra_spacing_char = 4
+font_data = ExtResource( 1 )
+
+[sub_resource type="Gradient" id=16]
+offsets = PoolRealArray( 0.178744, 0.396135, 0.661836, 0.869565, 1 )
+colors = PoolColorArray( 0, 0, 0, 1, 0.261861, 0, 0, 1, 0.4375, 0, 0, 1, 0.78125, 0, 0, 1, 1, 0, 0, 1 )
+
+[sub_resource type="GradientTexture" id=4]
+gradient = SubResource( 16 )
+
+[sub_resource type="DynamicFont" id=14]
+size = 28
+extra_spacing_char = 12
+font_data = ExtResource( 3 )
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0.603922, 0, 0, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="DynamicFont" id=15]
+size = 28
+extra_spacing_top = 10
+extra_spacing_char = 12
+font_data = ExtResource( 3 )
+
+[sub_resource type="StyleBoxFlat" id=11]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id=12]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id=13]
+bg_color = Color( 0.603922, 0, 0, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[node name="Start_Menu" type="Control"]
+script = ExtResource( 2 )
+
+[node name="Background" type="ColorRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="Label" type="Label" parent="."]
+material = SubResource( 1 )
+margin_left = 176.0
+margin_top = 100.0
+margin_right = 848.0
+margin_bottom = 431.0
+custom_fonts/font = SubResource( 2 )
+text = "Blight of Blood
+"
+align = 1
+valign = 1
+
+[node name="Light2D" type="Light2D" parent="Label"]
+position = Vector2( 328, 93.595 )
+rotation = -1.5708
+scale = Vector2( 0.069917, 736.036 )
+texture = SubResource( 4 )
+
+[node name="Play" type="Button" parent="."]
+margin_left = 412.0
+margin_top = 300.0
+margin_right = 612.0
+margin_bottom = 360.0
+custom_colors/font_color_hover = Color( 0.603922, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0.603922, 0, 0, 1 )
+custom_fonts/font = SubResource( 14 )
+custom_styles/hover = SubResource( 8 )
+custom_styles/pressed = SubResource( 9 )
+custom_styles/normal = SubResource( 10 )
+text = "Play"
+
+[node name="Quit" type="Button" parent="."]
+margin_left = 412.0
+margin_top = 420.0
+margin_right = 612.0
+margin_bottom = 480.0
+custom_colors/font_color_hover = Color( 0.603922, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0.603922, 0, 0, 1 )
+custom_fonts/font = SubResource( 15 )
+custom_styles/hover = SubResource( 11 )
+custom_styles/pressed = SubResource( 12 )
+custom_styles/normal = SubResource( 13 )
+text = "Quit"
+
+[connection signal="pressed" from="Play" to="." method="_on_Play_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_Button_pressed"]

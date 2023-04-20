@@ -1,0 +1,242 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Levels/Door.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Door.png" type="Texture" id=3]
+[ext_resource path="res://icon.png" type="Texture" id=4]
+[ext_resource path="res://Enemies/Enemies.gd" type="Script" id=5]
+[ext_resource path="res://UI/Camera.gd" type="Script" id=6]
+[ext_resource path="res://Combat/Combat.gd" type="Script" id=7]
+[ext_resource path="res://Player/C_Player.gd" type="Script" id=8]
+[ext_resource path="res://Enemies/C_Vamp.tscn" type="PackedScene" id=9]
+
+[sub_resource type="ConvexPolygonShape2D" id=1]
+points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
+
+[sub_resource type="TileSet" id=2]
+0/name = "icon.png 0"
+0/texture = ExtResource( 4 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 64, 64 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 1 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 1 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 17.5, 30.5 )
+
+[node name="Game" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 2000.0
+margin_bottom = 1000.0
+color = Color( 0.0235294, 0.0196078, 0.117647, 1 )
+
+[node name="Background" type="TileMap" parent="."]
+format = 1
+
+[node name="LevelMap" type="TileMap" parent="."]
+tile_set = SubResource( 2 )
+collision_layer = 3
+collision_mask = 3
+format = 1
+tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 14, 0, 0, 15, 0, 0, 65536, 0, 0, 65551, 0, 0, 131072, 0, 0, 131087, 0, 0, 196608, 0, 0, 196623, 0, 0, 262144, 0, 0, 262159, 0, 0, 327680, 0, 0, 327695, 0, 0, 393216, 0, 0, 393231, 0, 0, 458752, 0, 0, 458767, 0, 0, 524288, 0, 0, 524303, 0, 0, 589824, 0, 0, 589825, 0, 0, 589826, 0, 0, 589827, 0, 0, 589828, 0, 0, 589829, 0, 0, 589830, 0, 0, 589831, 0, 0, 589832, 0, 0, 589833, 0, 0, 589834, 0, 0, 589835, 0, 0, 589836, 0, 0, 589837, 0, 0, 589838, 0, 0, 589839, 0, 0 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 119, 122 )
+
+[node name="Enemies" type="Node2D" parent="."]
+script = ExtResource( 5 )
+
+[node name="Door_4_to_5" type="Area2D" parent="."]
+position = Vector2( 913, 145 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="Door_4_to_5"]
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door_4_to_5"]
+position = Vector2( 0.5, 0.5 )
+shape = SubResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Combat" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 1024.0
+margin_bottom = 600.0
+script = ExtResource( 7 )
+
+[node name="Background" type="ColorRect" parent="Combat"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.0392157, 0.0392157, 0.392157, 1 )
+
+[node name="Player_Action_Area" type="ColorRect" parent="Combat"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -768.0
+color = Color( 0.392157, 0.392157, 0.392157, 1 )
+
+[node name="Fight1" type="Button" parent="Combat/Player_Action_Area"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -80.0
+margin_top = -200.0
+margin_right = 80.0
+margin_bottom = -160.0
+text = "Fight"
+
+[node name="Defend1" type="Button" parent="Combat/Player_Action_Area"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -80.0
+margin_top = -130.0
+margin_right = 80.0
+margin_bottom = -90.0
+text = "Defend"
+
+[node name="Item1" type="Button" parent="Combat/Player_Action_Area"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -80.0
+margin_top = -60.0
+margin_right = 80.0
+margin_bottom = -20.0
+text = "Item"
+
+[node name="Info1" type="Button" parent="Combat/Player_Action_Area"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -80.0
+margin_top = 10.0
+margin_right = 80.0
+margin_bottom = 50.0
+text = "Info"
+
+[node name="Info_Wall" type="ColorRect" parent="Combat/Player_Action_Area"]
+visible = false
+margin_left = 30.0
+margin_top = 80.0
+margin_right = 230.0
+margin_bottom = 290.0
+color = Color( 0.196078, 0.196078, 0.196078, 1 )
+
+[node name="Information" type="Label" parent="Combat/Player_Action_Area/Info_Wall"]
+margin_left = 18.0
+margin_top = 50.0
+margin_right = 178.0
+margin_bottom = 150.0
+align = 1
+valign = 1
+
+[node name="Player_Fight_Area" type="ColorRect" parent="Combat"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -768.0
+color = Color( 0.392157, 0.392157, 0.392157, 1 )
+
+[node name="Attack_A" type="Button" parent="Combat/Player_Fight_Area"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -80.0
+margin_top = -200.0
+margin_right = 80.0
+margin_bottom = -160.0
+text = "Critical Strike"
+
+[node name="Attack_B" type="Button" parent="Combat/Player_Fight_Area"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -80.0
+margin_top = -130.0
+margin_right = 80.0
+margin_bottom = -90.0
+text = "Reckless Strike"
+
+[node name="Attack_C" type="Button" parent="Combat/Player_Fight_Area"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -80.0
+margin_top = -60.0
+margin_right = 80.0
+margin_bottom = -20.0
+text = "Stunning Strike"
+
+[node name="Back" type="Button" parent="Combat/Player_Fight_Area"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -80.0
+margin_top = 10.0
+margin_right = 80.0
+margin_bottom = 50.0
+text = "Back"
+
+[node name="ColorRect" type="ColorRect" parent="Combat"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="C_Player_Container" type="Node2D" parent="Combat"]
+
+[node name="C_Player" type="Sprite" parent="Combat/C_Player_Container"]
+texture = ExtResource( 4 )
+script = ExtResource( 8 )
+
+[node name="C_Enemy_Container" type="Node2D" parent="Combat"]
+
+[node name="C_Vamp" parent="Combat/C_Enemy_Container" instance=ExtResource( 9 )]
+
+[node name="Camera" type="Camera2D" parent="."]
+current = true
+limit_left = 0
+limit_top = 0
+script = ExtResource( 6 )
+
+[connection signal="body_entered" from="Door_4_to_5" to="Door_4_to_5" method="_on_Door_body_entered"]
+[connection signal="pressed" from="Combat/Player_Action_Area/Fight1" to="Combat" method="_on_Fight1_pressed"]
+[connection signal="pressed" from="Combat/Player_Action_Area/Defend1" to="Combat" method="_on_Defend1_pressed"]
+[connection signal="pressed" from="Combat/Player_Action_Area/Item1" to="Combat" method="_on_Item1_pressed"]
+[connection signal="pressed" from="Combat/Player_Action_Area/Info1" to="Combat" method="_on_Info1_pressed"]
+[connection signal="pressed" from="Combat/Player_Fight_Area/Attack_A" to="Combat" method="_on_Attack_A_pressed"]
+[connection signal="pressed" from="Combat/Player_Fight_Area/Attack_B" to="Combat" method="_on_Attack_B_pressed"]
+[connection signal="pressed" from="Combat/Player_Fight_Area/Attack_C" to="Combat" method="_on_Attack_C_pressed"]
+[connection signal="pressed" from="Combat/Player_Fight_Area/Back" to="Combat" method="_on_Back_pressed"]

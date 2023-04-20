@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Enemies/Spider.gd" type="Script" id=1]
+[ext_resource path="res://Assets/spider.png" type="Texture" id=2]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 45.0
+height = 120.0
+
+[node name="Spider" type="KinematicBody2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2( 0.075, 0.075 )
+polygon = PoolVector2Array( 320.5, 512, -320.5, 512, -320.5, -512, 320.5, -512 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.5
+autostart = true
+
+[node name="Combat Start" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Combat Start"]
+position = Vector2( -50, 0 )
+rotation = 1.5708
+shape = SubResource( 1 )
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="body_entered" from="Combat Start" to="." method="_on_Combat_Start_body_entered"]
