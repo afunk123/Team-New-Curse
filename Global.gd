@@ -18,7 +18,7 @@ var room_enemy_type = {0:'',
 	1:'',
 	2:'Guard',
 	3:'Spider',
-	4: 'DM',
+	4: 'Guard2',
 	5: 'Vamp'
 }
 var room_enemy_pos = {0:Vector2.ZERO,
