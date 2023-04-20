@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-var speed = 380
+var speed = 350
 var velocity = Vector2.ZERO
 var direction = Vector2.ZERO
 var killed = false
@@ -8,7 +8,7 @@ var killed = false
 onready var Combat = get_node('/root/Game/Combat')
 
 func _ready():
-	direction = Vector2.LEFT
+	direction = Vector2.RIGHT
 
 func _physics_process(_delta):
 	if Combat.visible == false:
