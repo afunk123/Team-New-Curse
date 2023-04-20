@@ -33,7 +33,7 @@ func take_action():
 		Global.stats['health'] -= attack/Global.stats['defense']
 	elif action == 'defend':
 		if defense < Global.stats['attack'] :
-			defense += 2
+			defense += 1
 			defense = int(defense)
 		else:
 			Global.stats['health'] -= attack/Global.stats['defense']
