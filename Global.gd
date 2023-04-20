@@ -36,6 +36,10 @@ var stats = {"max_health":20, 'health':5,
 	'base_attack':20, 'attack':20,
 }
 
+func _unhandled_input(event):
+	if event.is_action_pressed("menu"):
+		get_node("/root/Game/Pause_Menu").show()
+
 func stat_raise(target, stat, amount):
 	if target == 'player':
 		stats[stat] += amount
