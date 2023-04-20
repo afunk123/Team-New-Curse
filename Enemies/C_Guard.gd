@@ -33,7 +33,7 @@ func take_action():
 			Global.stats['health'] -= attack/Global.stats['defense']
 			action = 'attack'
 			
-	print('enemy chose to ' + action)
+	Global.enemy_text = 'enemy chose to ' + action
 
 func damage(d):
 	if int(d) == 0:

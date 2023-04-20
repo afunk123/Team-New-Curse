@@ -31,7 +31,7 @@ func take_action():
 		elif action == 'use webs':
 			if randf() > 0.5 :
 				skip = true
-		print('enemy chose to ' + action)
+		Global.enemy_text = 'enemy chose to ' + action
 
 func damage(d):
 	if int(d) == 0:

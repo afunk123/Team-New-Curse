@@ -44,7 +44,7 @@ func take_action():
 	elif action == 'suck your blood' :
 		Global.stats['health'] -= bloodsuck
 		health += bloodsuck
-	print('enemy chose to ' + action)
+	Global.enemy_text = 'enemy chose to ' + action
 
 func damage(d):
 	if int(d) == 0:
