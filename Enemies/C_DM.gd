@@ -3,7 +3,7 @@ extends Sprite
 var health = 50
 var max_health = 50
 var attack = 50
-var atk_up = 5 #increases attack value during atk up punch
+var atk_up = 10 #increases attack value during atk up punch
 var defense = 10
 
 var number = 0
