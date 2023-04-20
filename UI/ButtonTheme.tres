@@ -1,0 +1,77 @@
+[gd_resource type="Theme" load_steps=9 format=2]
+
+[ext_resource path="res://Assets/Fonts/BLOODSEEKER - DEMO.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 28
+extra_spacing_top = 10
+extra_spacing_char = 12
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 28
+extra_spacing_top = 10
+extra_spacing_char = 12
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 28
+extra_spacing_top = 10
+extra_spacing_char = 12
+font_data = ExtResource( 4 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.603922, 0, 0, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.25098, 0.219608, 0.458824, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[resource]
+/colors/Hover = Color( 0.603922, 0, 0, 1 )
+/colors/Pressed = Color( 0.603922, 0, 0, 1 )
+/colors/PurpleOption = Color( 0.25098, 0.219608, 0.458824, 1 )
+/fonts/Hover = SubResource( 1 )
+/fonts/Normal = SubResource( 4 )
+/fonts/Pressed = SubResource( 5 )
+/styles/Hover = SubResource( 6 )
+/styles/Normal = SubResource( 7 )
+/styles/Pressed = SubResource( 2 )
+/styles/PurpleOption = SubResource( 3 )
